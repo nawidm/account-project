@@ -24,4 +24,13 @@ public class ServiceTest {
 		service.removeAccount(accountTest);
 		assertTrue(!service.getListOfAccounts().containsValue(accountTest));
 	}
+	
+	@Test
+	public void testJSON() {
+		service = new Service();
+		Account accountTest = new Account("Nawid","Mujadidi",33333333);
+		service.addAccount(accountTest);
+		AccountsJSON test = new AccountsJSON(service);
+		System.out.println(test.outputJSON());
+	}
 }
