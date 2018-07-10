@@ -25,4 +25,14 @@ public class Service {
 	public void setListOfAccounts(Map<Integer, Account> listOfAccounts) {
 		this.listOfAccounts = listOfAccounts;
 	}
+
+	public int getNumberOfOccurrences(String firstName) {
+		int count = 0;
+		for(Account acc : this.listOfAccounts.values()) {
+			if(acc.getFirstName().equals(firstName)) {
+				count++;
+			}
+		}
+		return count;
+	}
 }
